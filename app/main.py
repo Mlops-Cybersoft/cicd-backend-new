@@ -43,6 +43,6 @@ app.add_middleware(
 app.include_router(api_router, prefix=settings.api_prefix)
 
 
-@app.get("/health", response_model=HealthResponse, tags=["System"])
+@app.get("/api/health", response_model=HealthResponse, tags=["System"])
 def health() -> HealthResponse:
     return HealthResponse(status="healthy", service=settings.app_name, version="0.1.0")
